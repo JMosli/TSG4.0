@@ -1,0 +1,151 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum EventType {
+  PAYMENT_PAGE_VISIT
+}
+
+model User {
+  id Int @id @default(autoincrement())
+
+  username        String  @unique
+  email           String  @unique
+  password        String
+  is_global_admin Boolean
+
+  created_by        User? @relation(fields: [created_by_userId], references: [id], name: "parent")
+  created_by_userId Int?
+
+  owner_of          Range[] @relation(name: "owner_of")
+  security_guard_of Range[] @relation(name: "so_of")
+  created_users     User[]  @relation("parent")
+}
+
+model Range {
+  id Int @id @default(autoincrement())
+
+  name       String
+  ip_address String
+
+  private_key_signer String
+  private_key_range  String
+
+  public_key_range   String
+  public_key_checker String
+
+  security_guards User[] @relation(name: "so_of")
+  owners          User[] @relation(name: "owner_of")
+
+  videos     Video[]
+  payments   Payment[]
+  events     Event[]
+  photos     Photo[]
+  PollAnswer PollAnswer[]
+}
+
+model File {
+  id Int @id @default(autoincrement())
+
+  url          String
+  uid          String
+  storage_type String
+
+  createdAt DateTime @default(now())
+
+  videos Video[]
+  photos Photo[]
+}
+
+model Video {
+  id  Int    @id @default(autoincrement())
+  uid String @unique @default(uuid())
+
+  createdAt DateTime @default(now())
+
+  local_id Int
+
+  range   Range   @relation(fields: [rangeId], references: [id], onDelete: Cascade)
+  payment Payment @relation(fields: [paymentId], references: [id])
+  file    File    @relation(fields: [fileId], references: [id])
+
+  rangeId   Int
+  fileId    Int
+  paymentId Int
+}
+
+model Photo {
+  id        Int      @id @default(autoincrement())
+  uid       String   @unique @default(uuid())
+  createdAt DateTime @default(now())
+
+  range   Range   @relation(fields: [rangeId], references: [id], onDelete: Cascade)
+  payment Payment @relation(fields: [paymentId], references: [id])
+  file    File    @relation(fields: [fileId], references: [id])
+
+  rangeId   Int
+  fileId    Int
+  paymentId Int
+}
+
+model Payment {
+  id          Int    @id @default(autoincrement())
+  checkout_id String @unique
+
+  uid        String  @default(uuid())
+  url        String
+  invoice_id String
+  active     Boolean
+
+  price Int
+  email String @default("")
+
+  range_session_uid String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @default(now()) @updatedAt
+
+  range   Range   @relation(fields: [rangeId], references: [id], onDelete: Cascade)
+  rangeId Int
+  Video   Video[]
+  Photo   Photo[]
+
+  @@index([createdAt])
+}
+
+model Event {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  type     EventType
+  metadata Json      @default("{}")
+
+  range   Range @relation(fields: [rangeId], references: [id])
+  rangeId Int
+
+  @@index([createdAt, type])
+}
+
+model PollAnswer {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  question  Int
+  answer    Int
+  client_id Int
+
+  range   Range @relation(fields: [rangeId], references: [id])
+  rangeId Int
+
+  @@index([question, answer, client_id, rangeId])
+}

@@ -1,0 +1,100 @@
+.card {
+    width: 332px;
+    height: 220px;
+    border-radius: 10px;
+    display: flex;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(
+            168.31deg,
+            rgba(0, 0, 0, 0) 22.28%,
+            #000000 127.44%
+    );
+}
+
+.card-gradient {
+    position: relative;
+    display: inline-block;
+}
+
+.card-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #34ba05;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-checkmark {
+    height: 18px;
+    width: 7px;
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
+    transform: rotate(45deg);
+
+    margin-bottom: 5px;
+}
+
+[hidden] {
+    display: none;
+}
+
+.card-gradient-selected:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 332px;
+    background: linear-gradient(
+            168.97deg,
+            rgba(33, 133, 0, 0) 25.8%,
+            #218500 127.68%
+    );
+}
+
+.card-image {
+    border-radius: 10px;
+}
+
+.card-info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.moment-card-info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+    color: white;
+    z-index: 2;
+    padding: 150px 0 0 20px;
+}
+
+.card-title {
+    font-family: "BebasNeue-Bold", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.03em;
+    color: white;
+    text-align: left;
+}
+
+.card-time {
+    font-family: "BebasNeue-Light", sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 26px;
+    color: white;
+    letter-spacing: -0.03em;
+    text-align: left;
+}
+

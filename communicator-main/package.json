@@ -1,0 +1,16 @@
+{
+  "name": "communicator",
+  "version": "1.0.0",
+  "description": "global-range communicator constants",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Roman Novikov",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.14.2",
+    "axios": "^1.7.2"
+  }
+}

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "PaymentSession" ALTER COLUMN "photos" SET DATA TYPE DOUBLE PRECISION[];

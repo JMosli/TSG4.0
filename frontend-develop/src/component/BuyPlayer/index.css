@@ -1,0 +1,10 @@
+.qr-container {
+    min-width: 420px;
+    background: #00000099;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    flex-direction: column;
+}

@@ -1,0 +1,10 @@
+.lane-wrapper {
+    height: 100%;
+}
+.lane-section {
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+    padding: 60px 90px 400px 90px;
+}

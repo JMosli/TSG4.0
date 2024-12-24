@@ -1,0 +1,6 @@
+.moment-list-items {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 45px;
+    flex-wrap: wrap;
+}

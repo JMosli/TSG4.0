@@ -1,0 +1,57 @@
+.buy-main {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("@assets/background.png");
+}
+
+.buy-selected-files {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0 0 90px;
+}
+
+.buy-selected-files-header {
+    display: flex;
+    gap: 45px;
+    align-items: center;
+}
+
+.buy-selected-files-header-title {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 70px;
+    font-weight: 900;
+    margin: 0;
+    line-height: 88px;
+    color: #FDFDFD;
+}
+
+.buy-selected-files-header-button {
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41px;
+    letter-spacing: -0.03em;
+    align-content: center;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 40px;
+    width: 497px;
+    height: 70px;
+    text-align: center;
+}
+
+.buy-selected-files-header-button > p {
+    margin: 0;
+}
+
+.buy-selected-files-cards {
+    display: grid;
+    gap: 20px 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
+    padding: 68px 0 68px 0;
+}
+
+.buy-lanes {
+    padding-top: 60px;
+}

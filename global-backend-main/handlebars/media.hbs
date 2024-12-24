@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email with Attachments</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; color: #333;">
+  <p style="margin-bottom: 20px;">{{text}}</p>
+
+  {{#each media}}
+  <a href="{{this.url}}" download style="text-decoration: none; color: #000;">
+    <table
+      style="width: 100%; max-width: 500px; margin-bottom: 20px; border-collapse: collapse; border: 1px solid #ccc;">
+      <tr>
+        <td style="width: 50px; padding: 10px; text-align: center;">
+          <img src="https://i.postimg.cc/C5csxVF2/attachment-1483.png" alt="Attachment Icon"
+            style="display: block; width: 40px; height: 40px;">
+        </td>
+        <td style="padding: 10px;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="font-weight: bold; font-size: 14px;">{{this.name}}</td>
+            </tr>
+            <tr>
+              <td style="font-size: 12px; color: #555;">{{this.size}}</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </a>
+  {{/each}}
+
+  <p style="margin-top: 20px;">Thank you for using our service!</p>
+</body>
+
+</html>

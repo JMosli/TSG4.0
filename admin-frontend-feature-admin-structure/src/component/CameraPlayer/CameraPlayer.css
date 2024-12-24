@@ -1,0 +1,13 @@
+.video-section {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+}
+
+.video {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}

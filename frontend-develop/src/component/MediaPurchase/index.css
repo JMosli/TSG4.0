@@ -1,0 +1,56 @@
+.media-purchase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+}
+
+.media-purchase-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'CeraPro', sans-serif;
+    font-weight: 500;
+}
+
+.media-purchase-qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.media-purchase-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.media-purchase-next {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'CeraPro', sans-serif;
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(-1, 1);
+    font-size: 46px;
+    font-weight: bold;
+}

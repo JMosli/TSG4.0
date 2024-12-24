@@ -1,0 +1,40 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.lane-items {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 6fr));
+    gap: 80px;
+    justify-content: start;
+    align-items: center;
+    padding-top: 51px;
+    flex-wrap: wrap;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+@keyframes scrollUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-25%);
+    }
+}
+
+.background-scroller {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+.lane-items-scrolling {
+    animation: scrollUp 20s linear infinite;
+    will-change: transform;
+}

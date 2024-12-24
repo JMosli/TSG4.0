@@ -1,0 +1,26 @@
+.lane-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lane-header-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.lane-header-title-text {
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 70px;
+  font-weight: 900;
+  line-height: 88px;
+  text-align: left;
+}
+
+.lane-header-subtitle-text {
+  font-family: "Gilroy-Regular", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 34px;
+  text-align: left;
+}

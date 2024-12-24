@@ -1,0 +1,35 @@
+.disabled {
+  background: #0e0e0e;
+  color: #222222;
+  border: 2px solid #222222;
+  cursor: not-allowed;
+}
+
+.default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  background: black !important;
+  color: #FFFFFF !important;
+}
+
+.active {
+  background: black !important;
+  color: #FFFFFF !important;
+}
+
+.button {
+  /*font-family: "Gilroy-Light", sans-serif;*/
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 41px;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 40px;
+  padding: 14px 40px;
+  transition: 0.5s;
+}

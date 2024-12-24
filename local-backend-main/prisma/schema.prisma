@@ -1,0 +1,186 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator json {
+  provider = "prisma-json-types-generator"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Range {
+  id Int @id @default(autoincrement())
+
+  private_key_signer String
+  public_key_checker String
+
+  camera_subnet String
+  is_default    Boolean
+
+  global_id Int
+
+  cameras         Camera[]
+  videos          Video[]
+  kiosks          Kiosk[]
+  PaymentTerminal PaymentTerminal[]
+
+  createdAt DateTime @default(now())
+}
+
+model Camera {
+  id Int @id @default(autoincrement())
+
+  ip_address          String
+  port                Int
+  username            String
+  password            String
+  stream_url          String
+  original_stream_url String
+
+  streaming Boolean
+  connected Boolean
+  lane_name String?
+
+  is_at_kiosk Boolean
+
+  /// [CameraConfig]
+  config Json @default("{}")
+
+  disconnectedAt DateTime?
+
+  range   Range @relation(fields: [rangeId], references: [id], onDelete: Cascade)
+  rangeId Int
+
+  kiosk   Kiosk? @relation(fields: [kioskId], references: [id], onDelete: SetNull)
+  kioskId Int?   @unique
+
+  clients Client[]
+  videos  Video[]
+
+  createdAt DateTime @default(now())
+}
+
+model Client {
+  id Int @id @default(autoincrement())
+
+  name       String?
+  directory  String  @default("")
+  face_id    Int
+  is_on_lane Boolean
+
+  createdAt DateTime @default(now())
+
+  videos Video[]
+
+  camera           Camera?          @relation(fields: [cameraId], references: [id], onDelete: SetNull)
+  cameraId         Int?
+  payment_sessions PaymentSession[]
+}
+
+model Video {
+  id Int @id @default(autoincrement())
+
+  path String
+
+  is_sold           Boolean
+  manually_recorded Boolean
+  is_full           Boolean @default(false)
+  duration          Float?
+
+  /// [VideoMetadata]
+  metadata Json @default("{}")
+
+  range       Range   @relation(fields: [rangeId], references: [id], onDelete: Cascade)
+  camera      Camera? @relation(fields: [cameraId], references: [id], onDelete: SetNull)
+  created_for Client? @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  sold_at   DateTime?
+  createdAt DateTime  @default(now())
+
+  rangeId  Int
+  clientId Int?
+  cameraId Int?
+}
+
+model Kiosk {
+  id Int @id @default(autoincrement())
+
+  is_connected Boolean
+  access_key   String  @default(uuid())
+
+  range   Range @relation(fields: [rangeId], references: [id], onDelete: Cascade)
+  rangeId Int
+
+  displays Display[]
+
+  camera         Camera?
+  PaymentSession PaymentSession[]
+  terminal       PaymentTerminal? @relation(fields: [paymentTerminalId], references: [id])
+
+  paymentTerminalId Int?
+
+  createdAt DateTime @default(now())
+}
+
+model Display {
+  id Int @id @default(autoincrement())
+
+  is_connected Boolean
+
+  kiosk   Kiosk @relation(fields: [kioskId], references: [id], onDelete: Cascade)
+  kioskId Int
+}
+
+model PaymentTerminal {
+  id Int @id @default(autoincrement())
+
+  is_connected Boolean
+  reader_id    String
+
+  range Range   @relation(fields: [rangeId], references: [id], onDelete: Cascade)
+  kiosk Kiosk[]
+
+  rangeId Int
+}
+
+model ConfigEntry {
+  id Int @id @default(autoincrement())
+
+  is_system   Boolean @default(false)
+  must_reboot Boolean
+  key         String
+  value       Json    @default("0")
+
+  createdAt DateTime @default(now())
+}
+
+model PaymentSession {
+  id Int @id @default(autoincrement())
+
+  video_ids Int[]
+
+  // timestamps from the full video
+  /// [PhotoDefinitions]
+  photos Json @default("[]")
+
+  uid    String  @default(uuid())
+  active Boolean
+
+  kiosk   Kiosk?   @relation(fields: [kioskId], references: [id], onDelete: Cascade)
+  clients Client[]
+
+  kioskId Int?
+
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}

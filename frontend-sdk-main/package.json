@@ -1,0 +1,32 @@
+{
+  "name": "frontend-sdk",
+  "version": "1.0.0",
+  "description": "sdk for videokiosk",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest \"/tests\"",
+    "test:coverage": "jest --coverage \"/tests\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.extensionforces.com/extfo-rue/0637_ujomos_videokiosk/frontend-sdk.git"
+  },
+  "keywords": [
+    "frontend-sdk"
+  ],
+  "author": "Yauheni Vozny",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "1.6.8",
+    "ts-case-convert": "2.0.7"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.12",
+    "jest": "29.7.0",
+    "ts-jest": "29.1.2",
+    "ts-node": "10.9.2"
+  }
+}

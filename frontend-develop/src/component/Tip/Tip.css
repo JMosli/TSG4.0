@@ -1,0 +1,13 @@
+.tip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.tip > span {
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+}

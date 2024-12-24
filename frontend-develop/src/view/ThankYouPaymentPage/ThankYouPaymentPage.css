@@ -1,0 +1,106 @@
+.thank-you {
+    background-image: url("@assets/thank-you-background.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+
+.thank-you-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thank-you-header {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    justify-content: space-between;
+    padding-top: 125px;
+}
+
+.thank-you-header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.thank-you-header-text-thank {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 94px;
+    font-weight: 900;
+    line-height: 119px;
+    text-align: left;
+}
+
+.thank-you-header-text-payment {
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: left;
+}
+
+.thank-you-info {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 67px;
+    text-align: center;
+
+    padding-top: 100px;
+}
+
+.thank-you-email {
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 69px;
+    text-align: left;
+    color: #FFE500;
+
+    padding-top: 30px;
+}
+
+.thank-you-line {
+    margin-top: 30px;
+    border-top: 2px dashed #9C9C9C;
+    width: 560px;
+}
+
+.thank-you-tips {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.thank-you-contact-email {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 62px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.thank-you-select-more {
+    border-radius: 40px;
+    border: 2px solid #ffffff;
+    padding: 15px 30px 15px 30px;
+    margin-top: 75px;
+}
+
+.thank-you-select-more > span {
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    align-self: center;
+    padding: 15px 30px 15px 30px;
+}

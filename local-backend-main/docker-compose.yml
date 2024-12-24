@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # db:
+  #   image: postgres
+  #   restart: always
+  #   environment:
+  #     - POSTGRES_DB=testdb
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  #   container_name: postgres
+  #   volumes:
+  #     - ./pgdata:/var/lib/postgresql/data
+  #   ports:
+  #     - '5432:5432'
+
+  go2rtc:
+    image: alexxit/go2rtc
+    container_name: go2rtc
+    network_mode: host
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - './go2rtc.config.yaml:/config/go2rtc.yaml'
+
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   restart: always
+  #   container_name: 0601-pgadmin4
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+  #     - PGADMIN_DEFAULT_PASSWORD=pgadmin4
+  #   ports:
+  #     - '5050:80'
+  #   depends_on:
+  #     - db

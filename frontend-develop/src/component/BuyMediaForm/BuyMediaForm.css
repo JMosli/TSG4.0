@@ -1,0 +1,200 @@
+.buy-media {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 38%;
+}
+
+.buy-media-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buy-media-header {
+    display: flex;
+    gap: 50px;
+}
+
+.buy-media-header-title {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 88px;
+    color: #262626;
+    padding-left: 60px;
+    margin: 60px 0 30px 0;
+}
+
+.buy-media-main-text {
+    padding-top: 50px;
+}
+
+.buy-media-main-text > span {
+    font-family: 'Gilroy-Regular', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+    color: #262626;
+}
+
+.buy-media-main-text > span > b {
+    font-family: 'Gilroy-Bold', sans-serif;
+}
+
+.buy-media-main-input-title {
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 44px;
+    text-align: center;
+    color: #262626;
+}
+
+.buy-media-main-input {
+    padding-top: 50px;
+}
+
+.buy-media-main-input > input {
+    height: 70px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #FDFDFD;
+    border: 2px solid #C4C4C4;
+    margin-top: 10px;
+
+    font-family: 'Gilroy-Regular', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    padding-left: 20px;
+    color: #282828;
+    text-align: left;
+}
+
+.buy-media-main-input > input:focus {
+    font-family: 'Gilroy-Regular', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    padding-left: 20px;
+    color: #282828;
+    text-align: left;
+}
+
+.buy-media-main-input > input::placeholder {
+    font-family: 'Gilroy-Regular', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    padding-left: 1px;
+    color: #D4D4D4;
+    text-align: left;
+}
+
+.buy-media-main-check {
+    display: flex;
+    padding-top: 20px;
+    align-items: center;
+}
+
+.buy-media-main-check-text {
+    font-family: 'Gilroy-Regular', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #262626;
+}
+
+.buy-media-main-check > input {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background-color: red !important;
+}
+
+.buy-media-main-checkbox {
+    accent-color: #0047FF;
+    border-radius: 5px;
+}
+
+.buy-media-line {
+    margin-top: 57px;
+    border-top: 2px dashed #9C9C9C;
+}
+
+.buy-media-order {
+    padding-top: 30px;
+    color: #262626;
+}
+
+.buy-media-order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buy-media-order-total-text {
+    font-family: 'Gilroy-Regular', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+}
+
+.buy-media-order-total-money {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 74px;
+    letter-spacing: -0.03em;
+    text-align: right;
+}
+
+.buy-media-order-button {
+    background: linear-gradient(98.89deg, #FFA800 5.32%, #FF5C00 56.62%);
+    border-radius: 10px;
+    padding: 24px 161px;
+    margin-top: 20px;
+}
+
+.buy-media-order-button-text {
+    font-family: 'Gilroy-Regular', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #FDFDFD;
+}
+
+.buy-media-back-continue-buttons {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41px;
+    letter-spacing: -0.03em;
+    padding-top: 20px;
+}
+
+.buy-media-back-continue-button {
+    color: #262626;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px 14px 30px;
+    border-radius: 40px;
+    border: 2px solid #262626;
+    text-align: center;
+}

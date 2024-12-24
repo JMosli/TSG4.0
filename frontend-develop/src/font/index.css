@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: local('Gilroy-Bold'), url(./Gilroy-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: local('Gilroy-Medium'), url(./Gilroy-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: local('Gilroy-Regular'), url(./Gilroy-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: local('Gilroy-Light'), url(./Gilroy-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'BebasNeue-Bold';
+    src: local('BebasNeue-Bold'), url(./BebasNeue-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'BebasNeue-Light';
+    src: local('BebasNeue-Light'), url(./BebasNeue-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: local('BebasNeue-Regular'), url(./BebasNeue-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'BebasNeue-Thin';
+    src: local('BebasNeue-Thin'), url(./BebasNeue-Thin.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'CeraPro';
+    src: local('CeraPro'), url(./CeraPro.ttf) format('truetype');
+}
